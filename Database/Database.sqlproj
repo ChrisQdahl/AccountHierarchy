@@ -69,5 +69,6 @@
     <Build Include="Demo\Tables\AccountScheduleSetup.sql" />
     <Build Include="Demo\Stored Procedures\Update_AccountHierarchy.sql" />
     <Build Include="Security\Demo.sql" />
+    <Build Include="Demo\Tables\AccountMappingError.sql" />
   </ItemGroup>
 </Project>
