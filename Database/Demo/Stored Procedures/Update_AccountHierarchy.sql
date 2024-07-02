@@ -420,8 +420,6 @@ BEGIN
           ,[ErrorDesc] = '2. Multi Mapping'
     FROM (
         SELECT [AccountScheduleId]
-              ,[ScheduleName]
-              ,[RowNo]
               ,[MultiMapping] = CASE
                     WHEN COUNT(*) OVER (PARTITION BY [ScheduleName],[AccountNo]) > 1 THEN 1
                     ELSE 0
@@ -431,8 +429,6 @@ BEGIN
         UNION
 
         SELECT [AccountScheduleId]
-              ,[ScheduleName]
-              ,[RowNo]
               ,[MultiMapping] = CASE
                     WHEN COUNT(*) OVER (PARTITION BY [ScheduleName],[ChildRowNo]) > 1 THEN 1
                     ELSE 0
@@ -473,8 +469,7 @@ BEGIN
         AND NOT EXISTS (
             SELECT 1
             FROM #Group_SubTotal G_S
-            WHERE G_S.[ScheduleName] = AccSch.[ScheduleName]
-                AND G_S.[RowNo] = AccSch.[RowNo]
+            WHERE G_S.[AccountScheduleId] = AccSch.[AccountScheduleId]
             );
 
     /* ##### 6. Unknown Account reference ##### */
@@ -489,7 +484,6 @@ BEGIN
         AND NOT EXISTS (
             SELECT 1
             FROM #Account A
-            WHERE A.[ScheduleName] = AccSch.[ScheduleName]
-                AND A.[RowNo] = AccSch.[RowNo]
+            WHERE A.[AccountScheduleId] = AccSch.[AccountScheduleId]
             );
 END
