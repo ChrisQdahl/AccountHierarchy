@@ -60,6 +60,7 @@
     <Folder Include="Demo\Tables\" />
     <Folder Include="Demo\Stored Procedures\" />
     <Folder Include="Security\" />
+    <Folder Include="Demo\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Demo\Tables\Account.sql" />
@@ -70,5 +71,13 @@
     <Build Include="Demo\Stored Procedures\Update_AccountHierarchy.sql" />
     <Build Include="Security\Demo.sql" />
     <Build Include="Demo\Tables\AccountMappingError.sql" />
+    <Build Include="Demo\Tables\FinanceTrans.sql" />
+    <Build Include="Demo\Views\vFinanceTrans.sql" />
+    <Build Include="Demo\Views\vAccountScheduleSetup.sql" />
+    <Build Include="Demo\Views\vAccountSchedule.sql" />
+    <Build Include="Demo\Views\vAccountMappingError.sql" />
+    <Build Include="Demo\Views\vAccountMapping.sql" />
+    <Build Include="Demo\Views\vAccountHierarchy.sql" />
+    <Build Include="Demo\Views\vAccount.sql" />
   </ItemGroup>
 </Project>
